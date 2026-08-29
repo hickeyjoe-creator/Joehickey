@@ -1,5 +1,5 @@
 // Set this to your actual ceremony date/time. Used by the countdown below.
-const WEDDING_DATE = new Date("2026-10-17T16:00:00-07:00");
+const WEDDING_DATE = new Date("2027-08-21T16:00:00-07:00");
 
 function initNav() {
   const toggle = document.getElementById("navToggle");
