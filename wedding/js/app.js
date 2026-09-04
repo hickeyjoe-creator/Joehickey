@@ -57,25 +57,38 @@ function initCountdown() {
 function initRsvpForm() {
   const form = document.getElementById("rsvpForm");
   const success = document.getElementById("rsvpSuccess");
+  const note = document.getElementById("formNote");
   if (!form) return;
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    // Placeholder behavior only: no backend is wired up yet.
-    // See README.md in this folder for how to connect a real submission
-    // endpoint (Formspree, Google Forms, a custom API, etc.).
-    const data = Object.fromEntries(new FormData(form).entries());
-    try {
-      const existing = JSON.parse(localStorage.getItem("rsvp-responses") || "[]");
-      existing.push({ ...data, submittedAt: new Date().toISOString() });
-      localStorage.setItem("rsvp-responses", JSON.stringify(existing));
-    } catch (err) {
-      // localStorage may be unavailable; submission still "succeeds" visually.
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) submitButton.disabled = true;
+    if (note) {
+      note.textContent = "";
+      note.classList.remove("form-note-error");
     }
 
-    form.classList.add("hidden");
-    if (success) success.classList.remove("hidden");
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("RSVP submission failed");
+
+      form.classList.add("hidden");
+      if (success) success.classList.remove("hidden");
+    } catch (err) {
+      if (note) {
+        note.textContent = "Something went wrong sending your RSVP. Please try again in a moment.";
+        note.classList.add("form-note-error");
+      }
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
   });
 }
 

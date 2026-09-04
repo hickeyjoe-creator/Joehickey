@@ -17,17 +17,12 @@ root.
 
 ## RSVP form
 
-The RSVP form currently only saves responses to the visitor's own browser
-(`localStorage`) — it does **not** send you anything. To actually collect
-responses, pick one:
+The RSVP form submits to Formspree (`js/app.js`, `initRsvpForm`), which
+emails each response to `cristinaandjoewedding@outlook.ie`. The endpoint is
+set on the form's `action` attribute in `index.html`.
 
-- **Formspree** (easiest): create a free form at formspree.io, then set the
-  form's `action` attribute in `index.html` to your Formspree endpoint and
-  remove the `event.preventDefault()` handling in `js/app.js` (or follow
-  Formspree's fetch-based AJAX example).
-- **Google Forms:** build the RSVP as a Google Form and either embed it with
-  an `<iframe>` or link out to it, replacing the form in `index.html`.
-- **Custom backend:** point the form at your own API endpoint.
+The free Formspree tier caps at 50 submissions/month — check that against
+your expected guest count, and upgrade on formspree.io if you need more.
 
 ## Viewing locally
 

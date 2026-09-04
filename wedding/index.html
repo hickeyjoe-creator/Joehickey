@@ -113,7 +113,7 @@
       <h2 class="section-title">RSVP</h2>
       <p class="section-subtitle">Kindly respond by June 21, 2027.</p>
 
-      <form id="rsvpForm" class="rsvp-form">
+      <form id="rsvpForm" class="rsvp-form" action="https://formspree.io/f/xbgjkplk" method="POST">
         <div class="form-row">
           <label for="fullName">Full Name(s)</label>
           <input type="text" id="fullName" name="fullName" required placeholder="Your full name" />
@@ -154,15 +154,12 @@
 
         <button type="submit" class="btn btn-primary">Send RSVP</button>
 
-        <p class="form-note" id="formNote">
-          Note: this form does not currently send anywhere. See the project README for
-          how to connect it to a real service (Formspree, Google Forms, etc).
-        </p>
+        <p class="form-note" id="formNote"></p>
       </form>
 
       <div id="rsvpSuccess" class="rsvp-success hidden" role="status">
         <h3>Thank you!</h3>
-        <p>Your RSVP has been recorded on this device. We can't wait to celebrate with you.</p>
+        <p>Your RSVP has been sent. We can't wait to celebrate with you.</p>
       </div>
     </section>
 
