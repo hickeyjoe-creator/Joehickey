@@ -6,14 +6,15 @@ root.
 
 ## Customize
 
-- **Names, date, location, story, event details, hotel, registry links:**
-  edit the text directly in `index.html`.
+- **Names, date, location, event details, hotel:** edit the text directly in
+  `index.html`.
 - **Countdown date:** update `WEDDING_DATE` at the top of `js/app.js` to your
   real ceremony date/time.
 - **Colors/fonts:** edit the CSS variables at the top of `css/styles.css`.
-- **Photos:** replace the placeholder `<div class="placeholder-photo">`
-  blocks in `index.html` with `<img>` tags pointing at files you add to
-  `images/`.
+- **Photos:** the Gallery section (`#gallery` in `index.html`) uses real
+  photos from `images/`, each inside a `<div class="gallery-photo"><img …>`.
+  To add more, drop a file in `images/` and add another `.gallery-photo`
+  block; to swap one out, just change its `src`.
 
 ## RSVP form
 

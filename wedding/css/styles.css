@@ -222,23 +222,17 @@ img { max-width: 100%; display: block; }
   margin: 0 0 2.5rem;
 }
 
-.placeholder-photo {
+.gallery-photo {
   aspect-ratio: 4 / 3;
-  background: repeating-linear-gradient(
-    45deg,
-    var(--color-bg-alt),
-    var(--color-bg-alt) 10px,
-    #e7e1d2 10px,
-    #e7e1d2 20px
-  );
-  border: 1px dashed var(--color-border);
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-muted);
-  font-size: 0.9rem;
-  text-align: center;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.gallery-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .details { background: var(--color-bg-alt); }
@@ -272,7 +266,7 @@ img { max-width: 100%; display: block; }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
 }
 
@@ -394,13 +388,13 @@ input:focus, select:focus, textarea:focus {
   .travel-grid {
     grid-template-columns: 1fr;
   }
-
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
   .nav-menu {
     position: absolute;
     top: 100%;
