@@ -9,6 +9,7 @@
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Lato", -apple-system, BlinkMacSystemFont, sans-serif;
   --max-width: 1100px;
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -235,6 +236,10 @@ img { max-width: 100%; display: block; }
   object-fit: cover;
 }
 
+.gallery-photo--top img {
+  object-position: center 15%;
+}
+
 .details { background: var(--color-bg-alt); }
 
 .details-grid {
@@ -325,6 +330,7 @@ input, select, textarea {
   border-radius: 8px;
   background: #fff;
   color: var(--color-text);
+  accent-color: var(--color-accent);
 }
 
 input:focus, select:focus, textarea:focus {
