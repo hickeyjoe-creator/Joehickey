@@ -247,6 +247,7 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(3, 1fr);
   gap: 1.75rem;
   margin-top: 2.5rem;
+  align-items: start;
 }
 
 .detail-card {
