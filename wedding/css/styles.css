@@ -1,11 +1,14 @@
 :root {
-  --color-bg: #faf8f4;
-  --color-bg-alt: #f1ede3;
-  --color-text: #2f2a26;
-  --color-muted: #6b625a;
-  --color-accent: #4b5d47;
-  --color-accent-light: #a9b79c;
-  --color-border: #ddd5c6;
+  --color-bg: #fbf3e7;
+  --color-bg-alt: #f1e4d0;
+  --color-text: #2b2118;
+  --color-muted: #7a6a57;
+  --color-accent: #c1502e;
+  --color-accent-2: #1f4d3a;
+  --color-accent-light: #e7b8a0;
+  --color-border: #e2d2b8;
+  --hero-glow-1: rgba(193, 80, 46, 0.14);
+  --hero-glow-2: rgba(31, 77, 58, 0.12);
   --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Lato", -apple-system, BlinkMacSystemFont, sans-serif;
   --max-width: 1100px;
@@ -81,6 +84,8 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--color-accent);
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
+  background: var(--color-accent);
+  color: #fff;
 }
 
 .nav-toggle {
@@ -108,12 +113,24 @@ img { max-width: 100%; display: block; }
   text-align: center;
   padding: 3rem 1.5rem;
   background:
-    radial-gradient(circle at 30% 20%, rgba(169, 183, 156, 0.25), transparent 60%),
-    radial-gradient(circle at 75% 80%, rgba(75, 93, 71, 0.12), transparent 55%),
+    radial-gradient(circle at 30% 20%, var(--hero-glow-1), transparent 60%),
+    radial-gradient(circle at 75% 80%, var(--hero-glow-2), transparent 55%),
     var(--color-bg);
 }
 
 .hero-inner { max-width: 640px; }
+
+.eyebrow-cities {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 .eyebrow {
   text-transform: uppercase;
@@ -145,7 +162,15 @@ img { max-width: 100%; display: block; }
 
 .hero-location {
   color: var(--color-muted);
-  margin: 0 0 2rem;
+  margin: 0 0 1.5rem;
+}
+
+.hero-divider {
+  width: 96px;
+  height: 2px;
+  margin: 0 auto 1.75rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
 }
 
 .countdown {
@@ -185,15 +210,16 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.03em;
   cursor: pointer;
   border: 1px solid var(--color-accent);
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, filter 0.2s ease;
 }
 
 .btn-primary {
   background: var(--color-accent);
   color: #fff;
+  box-shadow: 0 10px 24px -10px color-mix(in srgb, var(--color-accent) 60%, transparent);
 }
 
-.btn-primary:hover { background: #3b4a38; }
+.btn-primary:hover { filter: brightness(0.9); }
 
 .btn-secondary {
   background: transparent;
@@ -215,6 +241,20 @@ img { max-width: 100%; display: block; }
   font-size: 2.25rem;
   text-align: center;
   margin: 0 0 0.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
 }
 
 .section-subtitle {
@@ -228,6 +268,7 @@ img { max-width: 100%; display: block; }
   border-radius: 8px;
   border: 1px solid var(--color-border);
   overflow: hidden;
+  box-shadow: 0 14px 30px -16px rgba(43, 33, 24, 0.35);
 }
 
 .gallery-photo img {
@@ -253,9 +294,15 @@ img { max-width: 100%; display: block; }
 .detail-card {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-accent);
   border-radius: 12px;
   padding: 2rem 1.5rem;
   text-align: center;
+  box-shadow: 0 14px 30px -18px rgba(43, 33, 24, 0.3);
+}
+
+.detail-card:nth-child(2) {
+  border-top-color: var(--color-accent-2);
 }
 
 .detail-card h3 {
@@ -288,8 +335,14 @@ img { max-width: 100%; display: block; }
 .travel-card {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-accent);
   border-radius: 12px;
   padding: 2rem 1.5rem;
+  box-shadow: 0 14px 30px -18px rgba(43, 33, 24, 0.3);
+}
+
+.travel-card:nth-child(2) {
+  border-top-color: var(--color-accent-2);
 }
 
 .travel-card h3 {
