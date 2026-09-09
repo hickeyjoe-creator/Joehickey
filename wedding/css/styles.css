@@ -106,19 +106,49 @@ img { max-width: 100%; display: block; }
 
 /* Hero */
 .hero {
+  position: relative;
   min-height: 92vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 3rem 1.5rem;
+  overflow: hidden;
   background:
     radial-gradient(circle at 30% 20%, var(--hero-glow-1), transparent 60%),
     radial-gradient(circle at 75% 80%, var(--hero-glow-2), transparent 55%),
     var(--color-bg);
 }
 
-.hero-inner { max-width: 640px; }
+.hero-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: clamp(200px, 30vw, 380px);
+  z-index: 0;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, var(--color-bg) 100%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
 
 .eyebrow-cities {
   text-transform: uppercase;
