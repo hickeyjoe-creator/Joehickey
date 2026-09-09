@@ -135,13 +135,12 @@ img { max-width: 100%; display: block; }
   object-fit: cover;
   object-position: center top;
   display: block;
-}
-
-.hero-photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 0%, var(--color-bg) 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 20%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 20%, transparent 95%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
 }
 
 .hero-inner {
