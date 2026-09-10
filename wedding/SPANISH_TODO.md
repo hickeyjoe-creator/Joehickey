@@ -1,19 +1,18 @@
 # Spanish translation TODO
 
-Every string below is marked `[ES TODO]` in `locales/es.json`. Replace the
-`[ES TODO] ` prefix with the Spanish translation, keeping any `{token}`
-exactly as written — the site substitutes it at runtime (`{time}`, `{date}`,
-`{n}`). Don't translate the token names themselves.
+Every string below is marked `[ES TODO]` in `locales/es.json` (or, for the
+hotel section, in `data/hotels.json`). Replace the `[ES TODO] ` prefix with
+the Spanish translation, keeping any `{token}` exactly as written — the site
+substitutes it at runtime (`{time}`, `{date}`, `{n}`). Don't translate the
+token names themselves.
 
 Listed in the order each string appears on the page. The `key` is its path
 in `locales/es.json`, for reference when editing.
 
 **Not included here / left untouched on purpose:**
-- The entire **Travel & Accommodations** section — no hotel/transport
-  details yet, so it's still hardcoded English in `index.html` with no
-  translation keys at all.
 - A handful of "mechanical" strings that were translated directly rather
-  than left as `[ES TODO]`: `Adults`→`Adultos`, `Children`→`Niños`,
+  than left as `[ES TODO]`: `Adults`→`Adultos`,
+  `Children (12 and under)`→`Niños (12 años o menos)`,
   `Email`→`Correo electrónico`, `Full Name`/`Full name`→`Nombre completo`,
   `Adult {n}`→`Adulto {n}`, `Child {n}`→`Niño {n}`,
   `Days/Hours/Minutes/Seconds`→`Días/Horas/Minutos/Segundos`.
@@ -66,8 +65,67 @@ in `locales/es.json`, for reference when editing.
 | `gallery.alt.familyParade` | Cristina and Joe with the kids at a St. Patrick's Day parade |
 | `gallery.alt.familyTerrace` | Cristina and Joe with the kids on a terrace |
 
-## Travel & Accommodations
-Intentionally skipped — see note above.
+## Travel & Stay
+
+### Section chrome (`locales/es.json`)
+| key | English |
+|---|---|
+| `travel.sectionTitle` | Travel & Stay |
+| `travel.comingSoon` | Details coming soon |
+| `travel.tabsAriaLabel` | Travel sections (screen-reader only, not visible) |
+| `travel.tabs.madrid` | Getting to Madrid |
+| `travel.tabs.stay` | Where to Stay |
+| `travel.tabs.day` | On the Day |
+| `travel.tabs.home` | Getting Home |
+| `travel.madrid.airport` | Nearest airport: Adolfo Suárez Madrid–Barajas (MAD), about 25 minutes by car from the venue. |
+| `travel.madrid.taxiLabel` | Taxi |
+| `travel.madrid.taxi` | There's a fixed fare from the airport to central Madrid. |
+| `travel.madrid.taxiFareLabel` | Fixed fare |
+| `travel.madrid.metroLabel` | Metro / Train |
+| `travel.madrid.metro` | Metro Line 8 and Cercanías trains connect the airport to central Madrid. |
+| `travel.stay.emptyMessage` | Hotel recommendations are coming soon — we'll update this page as soon as we have them. |
+| `travel.stay.priceFromLabel` | From |
+| `travel.stay.promoCodeLabel` | Promo code |
+| `travel.stay.copyButton` | Copy |
+| `travel.stay.copiedConfirmation` | Copied! |
+| `travel.stay.bookingLabel` | How to book |
+| `travel.stay.bookButton` | Book |
+| `travel.stay.cancellationLabel` | Cancellation |
+| `travel.stay.shuttleLabel` | Shuttle |
+| `travel.stay.shuttleYes` | Shuttle provided |
+| `travel.stay.shuttleNo` | No shuttle |
+| `travel.stay.shuttleTbc` | Shuttle: details coming soon |
+| `travel.stay.badgeFamily` | Our pick for family |
+| `travel.stay.badgeGroups` | Best for groups |
+| `travel.stay.mapAriaLabel` | Map (screen-reader only, not visible) |
+| `travel.stay.mapVenue` | Venue: Club de Tiro Madrid |
+| `travel.stay.mapAirport` | Adolfo Suárez Madrid–Barajas Airport |
+| `travel.stay.mapCentre` | City centre (Puerta del Sol) |
+| `travel.day.times` | Guests are welcome from 18:00. The ceremony starts at 19:00. |
+| `travel.day.shuttleHeading` | Shuttle |
+| `travel.day.taxiHeading` | Not on the shuttle? |
+| `travel.day.addressHeading` | Venue address |
+| `travel.day.mapsLink` | View on Google Maps |
+| `travel.day.parkingNote` | On-site parking is available. |
+| `travel.home.coachHeading` | Coach |
+| `travel.home.taxiNote` | The venue is outside the city — taxis cannot be hailed on the street. Please pre-book a taxi or use the coach. |
+
+### Per-hotel content (`data/hotels.json`)
+Each hotel has its own `{ "en": "...", "es": "..." }` pairs for `tagline`,
+`distanceToVenue`, `distanceToCentre`, `priceNote`, `bookingInstructions`,
+and `cancellation` — translate the `es` value directly in that file (same
+`[ES TODO] ` convention). Currently populated with real copy (all hotels
+still `published: false`):
+
+| hotel id | field | English |
+|---|---|---|
+| `villa-madrid` | `priceNote` | We recommend choosing the flexible rate. Breakfast is not included by default. |
+| `villa-madrid` | `bookingInstructions` | Enter code CLUBDETIRO in the "Promoción" field when booking on hotelvillamadrid.com. |
+| `villa-madrid` | `cancellation` | Flexible rate: free cancellation until 20 August 2027. |
+| `aravaca-village` | `bookingInstructions` | Book directly with the hotel and mention Cristina & Joe's wedding for 10% off. |
+| `zarzuela-park` | `bookingInstructions` | 15% off the web rate with our code. |
+| `eurostars-monte-real` | `bookingInstructions` | 15% off the web rate, valid until one week before the wedding. |
+| `eurostars-monte-real` | `cancellation` | Free cancellation up to 14 days before arrival; full charge inside 14 days. |
 
 ## RSVP
 | key | English |
@@ -82,6 +140,7 @@ Intentionally skipped — see note above.
 | `rsvp.form.attending.yes` | Joyfully accepts |
 | `rsvp.form.attending.no` | Regretfully declines |
 | `rsvp.form.guestCounts.label` | Who's Coming? |
+| `rsvp.form.guestCounts.ageHelper` | Anyone aged 13 or over counts as an adult. |
 | `rsvp.form.guestList.dietaryPlaceholder` | Dietary restrictions / allergies (optional) |
 | `rsvp.form.message.label` | Message for the Couple (optional) |
 | `rsvp.form.message.placeholder` | Anything else you'd like to share? |

@@ -86,7 +86,8 @@
       "guestCounts": {
         "label": "Who's Coming?",
         "adults": "Adults",
-        "children": "Children"
+        "children": "Children (12 and under)",
+        "ageHelper": "Anyone aged 13 or over counts as an adult."
       },
       "guestList": {
         "adultLabel": "Adult {n}",
@@ -118,5 +119,56 @@
   },
   "footer": {
     "line": "Cristina & Joe · {date}"
+  },
+  "travel": {
+    "sectionTitle": "Travel & Stay",
+    "comingSoon": "Details coming soon",
+    "tabsAriaLabel": "Travel sections",
+    "tabs": {
+      "madrid": "Getting to Madrid",
+      "stay": "Where to Stay",
+      "day": "On the Day",
+      "home": "Getting Home"
+    },
+    "madrid": {
+      "airport": "Nearest airport: Adolfo Suárez Madrid–Barajas (MAD), about 25 minutes by car from the venue.",
+      "taxiLabel": "Taxi",
+      "taxi": "There's a fixed fare from the airport to central Madrid.",
+      "taxiFareLabel": "Fixed fare",
+      "metroLabel": "Metro / Train",
+      "metro": "Metro Line 8 and Cercanías trains connect the airport to central Madrid."
+    },
+    "stay": {
+      "emptyMessage": "Hotel recommendations are coming soon — we'll update this page as soon as we have them.",
+      "priceFromLabel": "From",
+      "promoCodeLabel": "Promo code",
+      "copyButton": "Copy",
+      "copiedConfirmation": "Copied!",
+      "bookingLabel": "How to book",
+      "bookButton": "Book",
+      "cancellationLabel": "Cancellation",
+      "shuttleLabel": "Shuttle",
+      "shuttleYes": "Shuttle provided",
+      "shuttleNo": "No shuttle",
+      "shuttleTbc": "Shuttle: details coming soon",
+      "badgeFamily": "Our pick for family",
+      "badgeGroups": "Best for groups",
+      "mapAriaLabel": "Map",
+      "mapVenue": "Venue: Club de Tiro Madrid",
+      "mapAirport": "Adolfo Suárez Madrid–Barajas Airport",
+      "mapCentre": "City centre (Puerta del Sol)"
+    },
+    "day": {
+      "times": "Guests are welcome from 18:00. The ceremony starts at 19:00.",
+      "shuttleHeading": "Shuttle",
+      "taxiHeading": "Not on the shuttle?",
+      "addressHeading": "Venue address",
+      "mapsLink": "View on Google Maps",
+      "parkingNote": "On-site parking is available."
+    },
+    "home": {
+      "coachHeading": "Coach",
+      "taxiNote": "The venue is outside the city — taxis cannot be hailed on the street. Please pre-book a taxi or use the coach."
+    }
   }
 }

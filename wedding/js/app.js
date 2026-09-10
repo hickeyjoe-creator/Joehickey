@@ -445,6 +445,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initRsvpForm();
   initAttendingToggle();
   initGuestFields();
+  Travel.init();
 
   const refreshWeddingLinks = initCalendarDropdown(
     {
@@ -477,5 +478,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderDates();
     renderGuestFields();
     refreshCalendarEventText([refreshWeddingLinks, refreshReminderLinks]);
+    Travel.refreshLocale();
   });
 });

@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -130,32 +132,71 @@
       </div>
     </section>
 
-    <!-- TRAVEL & REGISTRY -->
+    <!-- TRAVEL & STAY -->
     <section id="travel" class="section travel">
-      <h2 class="section-title">Travel &amp; Accommodations</h2>
-      <div class="travel-grid">
-        <div class="travel-card">
-          <h3>Where to Stay</h3>
-          <p>
-            Hotel recommendations will follow. The venue is about 10 minutes
-            from Madrid city centre, so there are plenty of options to suit
-            any budget.
-          </p>
+      <h2 class="section-title" data-i18n="travel.sectionTitle">Travel &amp; Stay</h2>
+
+      <div class="travel-tabs" role="tablist" aria-label="Travel sections" data-i18n-attr="aria-label:travel.tabsAriaLabel">
+        <button type="button" class="travel-tab" data-travel-tab="travel-madrid" role="tab" aria-selected="true" aria-controls="travel-madrid" data-i18n="travel.tabs.madrid">Getting to Madrid</button>
+        <button type="button" class="travel-tab" data-travel-tab="travel-stay" role="tab" aria-selected="false" aria-controls="travel-stay" data-i18n="travel.tabs.stay">Where to Stay</button>
+        <button type="button" class="travel-tab" data-travel-tab="travel-day" role="tab" aria-selected="false" aria-controls="travel-day" data-i18n="travel.tabs.day">On the Day</button>
+        <button type="button" class="travel-tab" data-travel-tab="travel-home" role="tab" aria-selected="false" aria-controls="travel-home" data-i18n="travel.tabs.home">Getting Home</button>
+      </div>
+
+      <div class="travel-panels">
+
+        <div id="travel-madrid" class="travel-panel" role="tabpanel">
+          <button type="button" class="travel-accordion-header" data-travel-tab="travel-madrid" aria-expanded="true" data-i18n="travel.tabs.madrid">Getting to Madrid</button>
+          <div class="travel-panel-body">
+            <p data-i18n="travel.madrid.airport">Nearest airport: Adolfo Su&aacute;rez Madrid&ndash;Barajas (MAD), about 25 minutes by car from the venue.</p>
+            <div class="travel-transport-row">
+              <h4 data-i18n="travel.madrid.taxiLabel">Taxi</h4>
+              <p data-i18n="travel.madrid.taxi">There's a fixed fare from the airport to central Madrid.</p>
+              <p class="travel-tbc-row"><span data-i18n="travel.madrid.taxiFareLabel">Fixed fare</span>: <span class="travel-tbc" data-i18n="travel.comingSoon">Details coming soon</span></p>
+            </div>
+            <div class="travel-transport-row">
+              <h4 data-i18n="travel.madrid.metroLabel">Metro / Train</h4>
+              <p data-i18n="travel.madrid.metro">Metro Line 8 and Cercan&iacute;as trains connect the airport to central Madrid.</p>
+            </div>
+          </div>
         </div>
-        <div class="travel-card">
-          <h3>Getting There</h3>
-          <p>
-            El Invernadero, Club de Tiro Madrid<br />
-            Ctra. Madrid-El Pardo M-605, Km 1.2<br />
-            28035 Madrid, Spain
-          </p>
-          <p>
-            Nearest airport: Adolfo Su&aacute;rez Madrid&ndash;Barajas (MAD), about 25 minutes away.
-            Club de Tiro Madrid is in the Monte de El Pardo, a few minutes from central Madrid.
-            On-site parking is available.
-          </p>
-          <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Club+de+Tiro+Madrid%2C+Ctra.+Madrid-El+Pardo+M-605%2C+Km+1.2%2C+28035+Madrid" target="_blank" rel="noopener">View on Google Maps</a>
+
+        <div id="travel-stay" class="travel-panel" role="tabpanel">
+          <button type="button" class="travel-accordion-header" data-travel-tab="travel-stay" aria-expanded="false" data-i18n="travel.tabs.stay">Where to Stay</button>
+          <div class="travel-panel-body">
+            <div class="hotel-cards" id="hotelCards"></div>
+            <p class="travel-empty-message" id="hotelsEmptyMessage" data-i18n="travel.stay.emptyMessage" hidden>Hotel recommendations are coming soon &mdash; we'll update this page as soon as we have them.</p>
+            <div id="travelMap" class="travel-map" role="application" aria-label="Map" data-i18n-attr="aria-label:travel.stay.mapAriaLabel"></div>
+          </div>
         </div>
+
+        <div id="travel-day" class="travel-panel" role="tabpanel">
+          <button type="button" class="travel-accordion-header" data-travel-tab="travel-day" aria-expanded="false" data-i18n="travel.tabs.day">On the Day</button>
+          <div class="travel-panel-body">
+            <p class="travel-highlight" data-i18n="travel.day.times">Guests are welcome from 18:00. The ceremony starts at 19:00.</p>
+
+            <h4 data-i18n="travel.day.shuttleHeading">Shuttle</h4>
+            <p class="travel-tbc" data-i18n="travel.comingSoon">Details coming soon</p>
+
+            <h4 data-i18n="travel.day.taxiHeading">Not on the shuttle?</h4>
+            <p class="travel-tbc" data-i18n="travel.comingSoon">Details coming soon</p>
+
+            <h4 data-i18n="travel.day.addressHeading">Venue address</h4>
+            <p>El Invernadero, Club de Tiro Madrid<br />Ctra. Madrid-El Pardo M-605, Km 1.2<br />28035 Madrid</p>
+            <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Club+de+Tiro+Madrid%2C+Ctra.+Madrid-El+Pardo+M-605%2C+Km+1.2%2C+28035+Madrid" target="_blank" rel="noopener" data-i18n="travel.day.mapsLink">View on Google Maps</a>
+            <p data-i18n="travel.day.parkingNote">On-site parking is available.</p>
+          </div>
+        </div>
+
+        <div id="travel-home" class="travel-panel" role="tabpanel">
+          <button type="button" class="travel-accordion-header" data-travel-tab="travel-home" aria-expanded="false" data-i18n="travel.tabs.home">Getting Home</button>
+          <div class="travel-panel-body">
+            <h4 data-i18n="travel.home.coachHeading">Coach</h4>
+            <p class="travel-tbc" data-i18n="travel.comingSoon">Details coming soon</p>
+            <p class="travel-highlight" data-i18n="travel.home.taxiNote">The venue is outside the city &mdash; taxis cannot be hailed on the street. Please pre-book a taxi or use the coach.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -216,7 +257,7 @@
                 </select>
               </div>
               <div class="guest-count-field">
-                <label for="children" data-i18n="rsvp.form.guestCounts.children">Children</label>
+                <label for="children" data-i18n="rsvp.form.guestCounts.children">Children (12 and under)</label>
                 <select id="children" name="children">
                   <option value="0" selected>0</option>
                   <option value="1">1</option>
@@ -228,6 +269,7 @@
                 </select>
               </div>
             </div>
+            <p class="guest-counts-helper" data-i18n="rsvp.form.guestCounts.ageHelper">Anyone aged 13 or over counts as an adult.</p>
           </div>
 
           <div class="form-row guest-list" id="guestFields"></div>
@@ -255,7 +297,9 @@
     <p>Cristina &amp; Joe &middot; <span id="footerDateText">August 21, 2027</span></p>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="js/i18n.js"></script>
+  <script src="js/travel.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
