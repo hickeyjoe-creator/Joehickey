@@ -12,14 +12,19 @@ const CALENDAR_EVENT = {
   description: "Join us as we celebrate the wedding of Cristina and Joe! Arrival from 6:00 PM, ceremony at 7:00 PM. More info: https://cristinaandjoewedding.com",
 };
 
-// Used by the "Add a Reminder" menu next to the RSVP deadline. All-day event
-// (no specific time), so start/end are dates rather than UTC timestamps —
-// per the iCal spec, the end date is exclusive (the day after).
+// Used by the "Add a Reminder" menu next to the RSVP deadline. Google and
+// Outlook only support creating calendar *events* via link (neither has a
+// public param for attaching a custom alert), so those stay as all-day
+// events labeled "Reminder: ...". The .ics download is a real VTODO task
+// instead — Apple Reminders (and other apps that support VTODO) file it
+// as an actual reminder, not a calendar entry.
 const RSVP_REMINDER_EVENT = {
   uid: "cristina-joe-wedding-2027-rsvp@cristinaandjoewedding.com",
-  title: "RSVP for Cristina & Joe's Wedding",
+  kind: "todo",
+  title: "Reminder: RSVP for Cristina & Joe's Wedding",
   startDate: "20270621",
   endDate: "20270622",
+  dueDate: "20270621",
   location: "",
   description: "Don't forget to RSVP for Cristina and Joe's wedding! https://cristinaandjoewedding.com/#rsvp",
 };
@@ -138,9 +143,33 @@ function escapeIcsText(text) {
 
 // Events use either {startUtc, endUtc} for timed events or
 // {startDate, endDate} (iCal-style, end exclusive) for all-day ones.
+// A "todo" event (event.kind === "todo") is written as a VTODO task —
+// a real reminder in apps like Apple Reminders — rather than a VEVENT.
 function buildIcsFile(event) {
+  const isTodo = event.kind === "todo";
   const isAllDay = Boolean(event.startDate);
   const dtstamp = new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+
+  if (isTodo) {
+    const lines = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//Cristina and Joe//Wedding//EN",
+      "CALSCALE:GREGORIAN",
+      "METHOD:PUBLISH",
+      "BEGIN:VTODO",
+      "UID:" + event.uid,
+      "DTSTAMP:" + dtstamp,
+      "DUE;VALUE=DATE:" + event.dueDate,
+      "SUMMARY:" + escapeIcsText(event.title),
+      "STATUS:NEEDS-ACTION",
+    ];
+    if (event.location) lines.push("LOCATION:" + escapeIcsText(event.location));
+    lines.push("DESCRIPTION:" + escapeIcsText(event.description));
+    lines.push("END:VTODO", "END:VCALENDAR");
+    return lines.join("\r\n");
+  }
+
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
