@@ -144,7 +144,7 @@ still `published: false`):
 | `rsvp.form.guestList.dietaryPlaceholder` | Dietary restrictions / allergies (optional) |
 | `rsvp.form.songRequest.label` | A song that'll get you on the dance floor |
 | `rsvp.form.songRequest.helper` | We'll pass it on to the DJ — no promises! |
-| `rsvp.form.songRequest.placeholder` | e.g. Dancing in the Moonlight – Toploader |
+| `rsvp.form.songRequest.placeholder` | e.g. Move On Up – Curtis Mayfield |
 | `rsvp.form.message.label` | Message for the Couple (optional) |
 | `rsvp.form.message.placeholder` | Anything else you'd like to share? |
 | `rsvp.form.submit` | Send RSVP |
