@@ -164,7 +164,7 @@ img { max-width: 100%; display: block; }
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  font-size: 0.8rem;
+  font-size: 1.6rem;
   color: var(--color-accent);
   margin-bottom: 1rem;
 }
