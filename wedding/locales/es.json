@@ -4,9 +4,9 @@
     "description": "Acompáñanos a celebrar la boda de Cristina y Joe."
   },
   "nav": {
-    "details": "Detalles",
+    "details": "Información",
     "gallery": "Fotos",
-    "travel": "Viaje",
+    "travel": "Desplazamiento",
     "rsvp": "RSVP",
     "menuToggle": "Menú",
     "langToggleLabel": "Idioma"
@@ -28,7 +28,7 @@
     "seconds": "Segundos"
   },
   "details": {
-    "sectionTitle": "Detalles de la boda",
+    "sectionTitle": "Información de la boda",
     "ceremony": {
       "title": "Ceremonia",
       "time": "{time}",
@@ -42,7 +42,7 @@
     },
     "dressCode": {
       "title": "Qué ponerse",
-      "body": "La idea es ir elegantes, pero cómodos: poneos algo con lo que os sintáis a gusto. Eso sí, seguramente hará calor, así que, chicos, si tenéis algo de lino, es una buena opción, pero no hace falta comprar nada. La ceremonia será al aire libre, sobre el césped, y la cena será en un espacio interior con aire acondicionado. Os recomendamos llevar una chaqueta ligera o un chal por si luego tenéis frío. Habrá sombrillas durante la ceremonia y, si queréis llevar tacones, no os preocupéis: tendremos protectores para que no se hundan en el césped."
+      "body": "La idea es ir elegantes, pero cómodos: poneos algo con lo que os sintáis a gusto. Eso sí, seguramente hará calor, así que, si tenéis alguna prenda de lino, es una buena opción, pero no hace falta comprar nada. La ceremonia será al aire libre, sobre el césped, y la cena será en un espacio interior con aire acondicionado. Os recomendamos llevar una chaqueta ligera o un chal por si luego tenéis frío. Habrá sombrillas durante la ceremonia y, si queréis llevar tacones, no os preocupéis: tendremos protectores para que no se hundan en el césped."
     }
   },
   "gallery": {
@@ -61,7 +61,7 @@
   "rsvp": {
     "sectionTitle": "RSVP",
     "deadline": "Por favor, confirma tu asistencia antes del {date}.",
-    "deadlineNote": "Si ya sabes que vas a venir, confirmarlo cuanto antes nos ayuda a organizar las reservas de hotel.",
+    "deadlineNote": "Si ya sabes que vas a venir, confirmarlo cuanto antes, nos ayuda a organizar las reservas de hotel.",
     "contactLine": "Si tienes alguna duda, escríbenos a cristinaandjoewedding@outlook.ie",
     "reminder": {
       "button": "Añadir un recordatorio",
