@@ -157,6 +157,19 @@
       <h2 class="section-title">RSVP</h2>
       <p class="section-subtitle">Kindly respond by June 21, 2027.</p>
 
+      <div class="rsvp-reminder">
+        <div class="calendar-add">
+          <button type="button" class="btn btn-secondary" id="reminderToggle" aria-haspopup="true" aria-expanded="false">
+            Add a Reminder
+          </button>
+          <div class="calendar-menu" id="reminderMenu" hidden>
+            <a id="reminderGoogle" href="#" target="_blank" rel="noopener">Google Calendar</a>
+            <a id="reminderOutlook" href="#" target="_blank" rel="noopener">Outlook</a>
+            <a id="reminderIcs" href="#" download="rsvp-reminder.ics">Apple / Other (.ics)</a>
+          </div>
+        </div>
+      </div>
+
       <form id="rsvpForm" class="rsvp-form" action="https://formspree.io/f/xbgjkplk" method="POST">
         <div class="form-row">
           <label for="fullName">Full Name(s)</label>
