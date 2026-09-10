@@ -51,7 +51,19 @@
           <div class="countdown-item"><span id="cd-mins">00</span><label>Minutes</label></div>
           <div class="countdown-item"><span id="cd-secs">00</span><label>Seconds</label></div>
         </div>
-        <a href="#rsvp" class="btn btn-primary">RSVP</a>
+        <div class="hero-actions">
+          <a href="#rsvp" class="btn btn-primary">RSVP</a>
+          <div class="calendar-add">
+            <button type="button" class="btn btn-secondary" id="calendarToggle" aria-haspopup="true" aria-expanded="false">
+              Add to Calendar
+            </button>
+            <div class="calendar-menu" id="calendarMenu" hidden>
+              <a id="calendarGoogle" href="#" target="_blank" rel="noopener">Google Calendar</a>
+              <a id="calendarOutlook" href="#" target="_blank" rel="noopener">Outlook</a>
+              <a id="calendarIcs" href="#" download="cristina-and-joe-wedding.ics">Apple / Other (.ics)</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
