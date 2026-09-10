@@ -74,7 +74,7 @@ Intentionally skipped — see note above.
 |---|---|
 | `rsvp.deadline` | Kindly respond by {date}. |
 | `rsvp.deadlineNote` | If you already know you're coming, an early yes helps us with hotel bookings. |
-| `rsvp.contactLine` | Questions? Email us at cristinaandjoewedding@outlook.com |
+| `rsvp.contactLine` | Questions? Email us at cristinaandjoewedding@outlook.ie |
 | `rsvp.reminder.button` | Add a Reminder |
 | `rsvp.reminder.ics` | Apple Reminders / Other (.ics) |
 | `rsvp.form.fullName.placeholder` | Your full name |
