@@ -85,11 +85,16 @@ function initCountdown() {
 function initAttendingToggle() {
   const radios = document.querySelectorAll('input[name="attending"]');
   const fields = document.getElementById("attendingFields");
+  const message = document.getElementById("message");
   if (!radios.length || !fields) return;
+
+  const joiningPlaceholder = message ? message.placeholder : "";
 
   radios.forEach((radio) => {
     radio.addEventListener("change", () => {
-      fields.classList.toggle("hidden", radio.value !== "yes" || !radio.checked);
+      const attending = radio.value === "yes" && radio.checked;
+      fields.classList.toggle("hidden", !attending);
+      if (message) message.placeholder = attending ? joiningPlaceholder : "";
     });
   });
 }
