@@ -189,25 +189,41 @@
           </div>
         </fieldset>
 
-        <div class="form-row">
-          <label for="guests">Number of Guests (including you)</label>
-          <select id="guests" name="guests">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
+        <div class="attending-fields hidden" id="attendingFields">
+          <div class="form-row">
+            <label id="guestCountsLabel">Who's Coming?</label>
+            <div class="guest-counts-grid" role="group" aria-labelledby="guestCountsLabel">
+              <div class="guest-count-field">
+                <label for="adults">Adults</label>
+                <select id="adults" name="adults">
+                  <option value="0">0</option>
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+              </div>
+              <div class="guest-count-field">
+                <label for="children">Children</label>
+                <select id="children" name="children">
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-        <div class="form-row">
-          <label for="dietary">Dietary Restrictions / Allergies</label>
-          <textarea id="dietary" name="dietary" rows="3" placeholder="Let us know of any allergies or dietary needs"></textarea>
+          <div class="form-row">
+            <label for="dietary">Dietary Restrictions / Allergies</label>
+            <textarea id="dietary" name="dietary" rows="3" placeholder="Let us know of any allergies or dietary needs"></textarea>
+          </div>
         </div>
 
         <div class="form-row">

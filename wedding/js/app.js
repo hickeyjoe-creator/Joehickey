@@ -82,6 +82,18 @@ function initCountdown() {
   setInterval(tick, 1000);
 }
 
+function initAttendingToggle() {
+  const radios = document.querySelectorAll('input[name="attending"]');
+  const fields = document.getElementById("attendingFields");
+  if (!radios.length || !fields) return;
+
+  radios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      fields.classList.toggle("hidden", radio.value !== "yes" || !radio.checked);
+    });
+  });
+}
+
 function initRsvpForm() {
   const form = document.getElementById("rsvpForm");
   const success = document.getElementById("rsvpSuccess");
@@ -278,6 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initNav();
   initCountdown();
   initRsvpForm();
+  initAttendingToggle();
 
   initCalendarDropdown(
     {

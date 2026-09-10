@@ -500,6 +500,27 @@ input:focus, select:focus, textarea:focus {
   font-weight: 400;
 }
 
+.attending-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.guest-counts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.4rem;
+}
+
+.guest-count-field label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  margin-bottom: 0.35rem;
+}
+
 .form-note {
   font-size: 0.8rem;
   color: var(--color-muted);
