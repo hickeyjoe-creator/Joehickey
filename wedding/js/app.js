@@ -232,6 +232,13 @@ function initRsvpForm() {
   const form = document.getElementById("rsvpForm");
   const success = document.getElementById("rsvpSuccess");
   const note = document.getElementById("formNote");
+  // These only make sense before a guest has responded — once they've
+  // submitted, the deadline and "remind me to RSVP" prompt are noise.
+  const preSubmitElements = [
+    document.getElementById("rsvpDeadlineText"),
+    document.querySelector(".rsvp-deadline-note"),
+    document.querySelector(".rsvp-reminder"),
+  ].filter(Boolean);
   if (!form) return;
 
   form.addEventListener("submit", async (event) => {
@@ -254,6 +261,7 @@ function initRsvpForm() {
       if (!response.ok) throw new Error("RSVP submission failed");
 
       form.classList.add("hidden");
+      preSubmitElements.forEach((el) => el.classList.add("hidden"));
       if (success) success.classList.remove("hidden");
     } catch (err) {
       if (note) {
