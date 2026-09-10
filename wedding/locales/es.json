@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "[ES TODO] Cristina & Joe | Our Wedding",
+    "description": "[ES TODO] Join us as we celebrate the wedding of Cristina and Joe."
+  },
+  "nav": {
+    "details": "[ES TODO] Details",
+    "gallery": "[ES TODO] Gallery",
+    "travel": "[ES TODO] Travel",
+    "rsvp": "RSVP",
+    "menuToggle": "[ES TODO] Menu",
+    "langToggleLabel": "[ES TODO] Language"
+  },
+  "hero": {
+    "citiesEyebrow": "Madrid ✦ Dublin",
+    "eyebrow": "[ES TODO] We're getting married",
+    "location": "El Invernadero, Club de Tiro Madrid · El Pardo, Madrid",
+    "rsvpButton": "RSVP",
+    "addToCalendar": "[ES TODO] Add to Calendar",
+    "calendarGoogle": "Google Calendar",
+    "calendarOutlook": "Outlook",
+    "calendarIcs": "[ES TODO] Apple / Other (.ics)"
+  },
+  "countdown": {
+    "days": "Días",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos"
+  },
+  "details": {
+    "sectionTitle": "[ES TODO] Wedding Details",
+    "ceremony": {
+      "title": "[ES TODO] Ceremony",
+      "time": "{time}",
+      "arrival": "[ES TODO] Please arrive from {time}.",
+      "address": "El Invernadero, Club de Tiro Madrid\nCtra. Madrid-El Pardo M-605, Km 1.2\n28035 Madrid"
+    },
+    "reception": {
+      "title": "[ES TODO] Reception",
+      "time": "[ES TODO] Until {time}",
+      "address": "El Invernadero, Club de Tiro Madrid\nCtra. Madrid-El Pardo M-605, Km 1.2\n28035 Madrid"
+    },
+    "dressCode": {
+      "title": "[ES TODO] Dress Code",
+      "body": "[ES TODO] What to wear: Smart but comfortable — wear whatever you feel good in. Fair warning, it'll likely be warm, so lads, linen is a good shout if you have it, though no need to go buying one. The ceremony is outside on the grass and dinner is indoors with the air-con on, so bring a light jacket or wrap in case you get chilly later. The venue will have sun umbrellas out for the ceremony, and heels are no bother — there'll be heel protectors on hand for the lawn."
+    }
+  },
+  "gallery": {
+    "sectionTitle": "[ES TODO] Gallery",
+    "subtitle": "[ES TODO] A few of our favorite moments.",
+    "alt": {
+      "familyBeach": "[ES TODO] Cristina and Joe on the beach with family",
+      "plazaSelfie": "[ES TODO] Cristina and Joe in a Spanish plaza",
+      "formalPortrait": "[ES TODO] Cristina and Joe dressed up for an evening out",
+      "castle": "[ES TODO] Cristina and Joe in front of a castle",
+      "familyParade": "[ES TODO] Cristina and Joe with the kids at a St. Patrick's Day parade",
+      "familyTerrace": "[ES TODO] Cristina and Joe with the kids on a terrace",
+      "heroPhoto": ""
+    }
+  },
+  "rsvp": {
+    "sectionTitle": "RSVP",
+    "deadline": "[ES TODO] Kindly respond by {date}.",
+    "deadlineNote": "[ES TODO] If you already know you're coming, an early yes helps us with hotel bookings.",
+    "contactLine": "[ES TODO] Questions? Email us at cristinaandjoewedding@outlook.com",
+    "reminder": {
+      "button": "[ES TODO] Add a Reminder",
+      "google": "Google Calendar",
+      "outlook": "Outlook",
+      "ics": "[ES TODO] Apple Reminders / Other (.ics)"
+    },
+    "form": {
+      "fullName": {
+        "label": "Nombre completo",
+        "placeholder": "[ES TODO] Your full name"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "you@example.com"
+      },
+      "attending": {
+        "legend": "[ES TODO] Will you be attending?",
+        "yes": "[ES TODO] Joyfully accepts",
+        "no": "[ES TODO] Regretfully declines"
+      },
+      "guestCounts": {
+        "label": "[ES TODO] Who's Coming?",
+        "adults": "Adultos",
+        "children": "Niños"
+      },
+      "guestList": {
+        "adultLabel": "Adulto {n}",
+        "childLabel": "Niño {n}",
+        "namePlaceholder": "Nombre completo",
+        "dietaryPlaceholder": "[ES TODO] Dietary restrictions / allergies (optional)"
+      },
+      "message": {
+        "label": "[ES TODO] Message for the Couple (optional)",
+        "placeholder": "[ES TODO] Anything else you'd like to share?"
+      },
+      "submit": "[ES TODO] Send RSVP",
+      "errorGeneric": "[ES TODO] Something went wrong sending your RSVP. Please try again in a moment."
+    },
+    "success": {
+      "title": "[ES TODO] Thank you!",
+      "body": "[ES TODO] Your RSVP has been sent. We can't wait to celebrate with you."
+    }
+  },
+  "calendar": {
+    "wedding": {
+      "title": "[ES TODO] Cristina & Joe's Wedding",
+      "description": "[ES TODO] Join us as we celebrate the wedding of Cristina and Joe! Arrival from 6:00 PM, ceremony at 7:00 PM. More info: https://cristinaandjoewedding.com"
+    },
+    "reminder": {
+      "title": "[ES TODO] Reminder: RSVP for Cristina & Joe's Wedding",
+      "description": "[ES TODO] Don't forget to RSVP for Cristina and Joe's wedding! https://cristinaandjoewedding.com/#rsvp"
+    }
+  },
+  "footer": {
+    "line": "Cristina & Joe · {date}"
+  }
+}

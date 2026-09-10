@@ -1,8 +1,14 @@
-// Set this to your actual ceremony date/time. Used by the countdown below.
-const WEDDING_DATE = new Date("2027-08-21T19:00:00+02:00");
+// Single source of truth for every date/time on the page. Formatted
+// per-language by I18N.formatFullDate/formatShortDate/formatTime — never
+// duplicated as strings in the locale JSON.
+const WEDDING_DATE = new Date("2027-08-21T19:00:00+02:00"); // ceremony start
+const ARRIVAL_TIME = new Date("2027-08-21T18:00:00+02:00");
+const RECEPTION_END_TIME = new Date("2027-08-22T04:00:00+02:00");
+const RSVP_DEADLINE = new Date("2027-06-21T00:00:00+02:00");
 
 // Used by the "Add to Calendar" menu. Times are UTC (Madrid is UTC+2 in
-// August/CEST), spanning arrival through the end of the reception.
+// August/CEST), spanning arrival through the end of the reception. title/
+// description are refreshed from the active locale on language change.
 const CALENDAR_EVENT = {
   uid: "cristina-joe-wedding-2027@cristinaandjoewedding.com",
   title: "Cristina & Joe's Wedding",
@@ -82,21 +88,144 @@ function initCountdown() {
   setInterval(tick, 1000);
 }
 
+// Renders every locale-formatted date/time on the page from the Date
+// constants above. Called on load and again whenever the language changes.
+function renderDates() {
+  const weddingDateText = document.getElementById("weddingDateText");
+  if (weddingDateText) weddingDateText.textContent = I18N.formatFullDate(WEDDING_DATE);
+
+  const ceremonyTimeText = document.getElementById("ceremonyTimeText");
+  if (ceremonyTimeText) ceremonyTimeText.textContent = I18N.formatTime(WEDDING_DATE);
+
+  const receptionTimeText = document.getElementById("receptionTimeText");
+  if (receptionTimeText) {
+    receptionTimeText.textContent = I18N.t("details.reception.time", { time: I18N.formatTime(RECEPTION_END_TIME) });
+  }
+
+  const ceremonyArrivalText = document.getElementById("ceremonyArrivalText");
+  if (ceremonyArrivalText) {
+    const arrivalLine = I18N.t("details.ceremony.arrival", { time: I18N.formatTime(ARRIVAL_TIME) });
+    const addressLines = I18N.t("details.ceremony.address").split("\n");
+    ceremonyArrivalText.innerHTML = [arrivalLine, ...addressLines]
+      .map((line) => line.replace(/&/g, "&amp;").replace(/</g, "&lt;"))
+      .join("<br />");
+  }
+
+  const rsvpDeadlineText = document.getElementById("rsvpDeadlineText");
+  if (rsvpDeadlineText) {
+    rsvpDeadlineText.textContent = I18N.t("rsvp.deadline", { date: I18N.formatShortDate(RSVP_DEADLINE) });
+  }
+
+  const footerDateText = document.getElementById("footerDateText");
+  if (footerDateText) footerDateText.textContent = I18N.formatShortDate(WEDDING_DATE);
+}
+
 function initAttendingToggle() {
   const radios = document.querySelectorAll('input[name="attending"]');
   const fields = document.getElementById("attendingFields");
   const message = document.getElementById("message");
   if (!radios.length || !fields) return;
 
-  const joiningPlaceholder = message ? message.placeholder : "";
-
   radios.forEach((radio) => {
     radio.addEventListener("change", () => {
       const attending = radio.value === "yes" && radio.checked;
       fields.classList.toggle("hidden", !attending);
-      if (message) message.placeholder = attending ? joiningPlaceholder : "";
+      if (message) message.placeholder = attending ? I18N.t("rsvp.form.message.placeholder") : "";
     });
   });
+}
+
+// Builds the "Adult 1", "Adult 2"... "Child 1"... name + dietary fields
+// based on the current Adults/Children counts. Re-run on count change and
+// on language change; existing values are preserved across re-renders.
+function renderGuestFields() {
+  const adultsSelect = document.getElementById("adults");
+  const childrenSelect = document.getElementById("children");
+  const container = document.getElementById("guestFields");
+  const fullName = document.getElementById("fullName");
+  if (!adultsSelect || !childrenSelect || !container) return;
+
+  const adultsCount = parseInt(adultsSelect.value, 10) || 0;
+  const childrenCount = parseInt(childrenSelect.value, 10) || 0;
+
+  const existing = {};
+  container.querySelectorAll("input,textarea").forEach((el) => {
+    existing[el.name] = el.value;
+  });
+
+  container.innerHTML = "";
+
+  function addGuest(prefix, labelKey, index, defaultName) {
+    const label = I18N.t(labelKey, { n: index });
+
+    const heading = document.createElement("p");
+    heading.className = "guest-fields-heading";
+    heading.textContent = label;
+    container.appendChild(heading);
+
+    const nameRow = document.createElement("div");
+    nameRow.className = "form-row";
+    const nameLabel = document.createElement("label");
+    nameLabel.setAttribute("for", prefix + "_name");
+    nameLabel.textContent = label;
+    const nameInput = document.createElement("input");
+    nameInput.type = "text";
+    nameInput.id = prefix + "_name";
+    nameInput.name = prefix + "_name";
+    nameInput.required = true;
+    nameInput.placeholder = I18N.t("rsvp.form.guestList.namePlaceholder");
+    nameInput.value = existing[prefix + "_name"] !== undefined ? existing[prefix + "_name"] : defaultName || "";
+    nameRow.appendChild(nameLabel);
+    nameRow.appendChild(nameInput);
+    container.appendChild(nameRow);
+
+    const dietaryRow = document.createElement("div");
+    dietaryRow.className = "form-row";
+    const dietaryInput = document.createElement("textarea");
+    dietaryInput.id = prefix + "_dietary";
+    dietaryInput.name = prefix + "_dietary";
+    dietaryInput.rows = 2;
+    const dietaryPlaceholder = I18N.t("rsvp.form.guestList.dietaryPlaceholder");
+    dietaryInput.placeholder = dietaryPlaceholder;
+    dietaryInput.setAttribute("aria-label", dietaryPlaceholder);
+    dietaryInput.value = existing[prefix + "_dietary"] || "";
+    dietaryRow.appendChild(dietaryInput);
+    container.appendChild(dietaryRow);
+
+    if (prefix === "guest_a1") {
+      nameInput.addEventListener("input", () => {
+        fullName.dataset.guestSynced = "false";
+      });
+    }
+  }
+
+  for (let i = 1; i <= adultsCount; i += 1) {
+    addGuest("guest_a" + i, "rsvp.form.guestList.adultLabel", i, i === 1 && fullName ? fullName.value : "");
+  }
+  for (let i = 1; i <= childrenCount; i += 1) {
+    addGuest("guest_c" + i, "rsvp.form.guestList.childLabel", i, "");
+  }
+}
+
+function initGuestFields() {
+  const adultsSelect = document.getElementById("adults");
+  const childrenSelect = document.getElementById("children");
+  const fullName = document.getElementById("fullName");
+  if (!adultsSelect || !childrenSelect) return;
+
+  adultsSelect.addEventListener("change", renderGuestFields);
+  childrenSelect.addEventListener("change", renderGuestFields);
+
+  if (fullName) {
+    fullName.addEventListener("input", () => {
+      const adult1Name = document.getElementById("guest_a1_name");
+      if (adult1Name && adult1Name.dataset.guestSynced !== "false") {
+        adult1Name.value = fullName.value;
+      }
+    });
+  }
+
+  renderGuestFields();
 }
 
 function initRsvpForm() {
@@ -128,7 +257,7 @@ function initRsvpForm() {
       if (success) success.classList.remove("hidden");
     } catch (err) {
       if (note) {
-        note.textContent = "Something went wrong sending your RSVP. Please try again in a moment.";
+        note.textContent = I18N.t("rsvp.form.errorGeneric");
         note.classList.add("form-note-error");
       }
     } finally {
@@ -245,8 +374,11 @@ function initCalendarDropdown(ids, event, icsFilename) {
   const icsLink = document.getElementById(ids.ics);
   if (!toggle || !menu) return;
 
-  googleLink.href = buildGoogleCalendarUrl(event);
-  outlookLink.href = buildOutlookUrl(event);
+  function refreshLinks() {
+    googleLink.href = buildGoogleCalendarUrl(event);
+    outlookLink.href = buildOutlookUrl(event);
+  }
+  refreshLinks();
 
   icsLink.addEventListener("click", (e) => {
     e.preventDefault();
@@ -263,6 +395,7 @@ function initCalendarDropdown(ids, event, icsFilename) {
   });
 
   function openMenu() {
+    refreshLinks();
     menu.hidden = false;
     toggle.setAttribute("aria-expanded", "true");
   }
@@ -289,15 +422,31 @@ function initCalendarDropdown(ids, event, icsFilename) {
       toggle.focus();
     }
   });
+
+  return refreshLinks;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+// Re-translates the title/description of the two calendar events from the
+// active locale. Mutating the shared objects is enough — the dropdown click
+// handlers read event.title/description live at click time.
+function refreshCalendarEventText(refreshers) {
+  CALENDAR_EVENT.title = I18N.t("calendar.wedding.title");
+  CALENDAR_EVENT.description = I18N.t("calendar.wedding.description");
+  RSVP_REMINDER_EVENT.title = I18N.t("calendar.reminder.title");
+  RSVP_REMINDER_EVENT.description = I18N.t("calendar.reminder.description");
+  refreshers.forEach((fn) => fn && fn());
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await I18N.init();
+
   initNav();
   initCountdown();
   initRsvpForm();
   initAttendingToggle();
+  initGuestFields();
 
-  initCalendarDropdown(
+  const refreshWeddingLinks = initCalendarDropdown(
     {
       toggle: "calendarToggle",
       menu: "calendarMenu",
@@ -309,7 +458,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "cristina-and-joe-wedding.ics"
   );
 
-  initCalendarDropdown(
+  const refreshReminderLinks = initCalendarDropdown(
     {
       toggle: "reminderToggle",
       menu: "reminderMenu",
@@ -320,4 +469,13 @@ document.addEventListener("DOMContentLoaded", () => {
     RSVP_REMINDER_EVENT,
     "rsvp-reminder.ics"
   );
+
+  renderDates();
+  refreshCalendarEventText([refreshWeddingLinks, refreshReminderLinks]);
+
+  I18N.onChange(() => {
+    renderDates();
+    renderGuestFields();
+    refreshCalendarEventText([refreshWeddingLinks, refreshReminderLinks]);
+  });
 });

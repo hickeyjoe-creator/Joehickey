@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cristina &amp; Joe | Our Wedding</title>
-  <meta name="description" content="Join us as we celebrate the wedding of Cristina and Joe." />
+  <title data-i18n="meta.title">Cristina &amp; Joe | Our Wedding</title>
+  <meta name="description" content="Join us as we celebrate the wedding of Cristina and Joe." data-i18n-attr="content:meta.description" />
   <meta name="theme-color" content="#c1502e" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
@@ -19,16 +19,22 @@
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
       <a class="nav-brand" href="#top">C &amp; J</a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
-        <span></span><span></span><span></span>
-        <span class="sr-only">Menu</span>
-      </button>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#details">Details</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#travel">Travel</a></li>
-        <li><a href="#rsvp" class="nav-cta">RSVP</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#details" data-i18n="nav.details">Details</a></li>
+          <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+          <li><a href="#travel" data-i18n="nav.travel">Travel</a></li>
+          <li><a href="#rsvp" class="nav-cta" data-i18n="nav.rsvp">RSVP</a></li>
+        </ul>
+        <div class="lang-toggle" role="group" data-i18n-attr="aria-label:nav.langToggleLabel" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span><span></span>
+          <span class="sr-only" data-i18n="nav.menuToggle">Menu</span>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -40,28 +46,28 @@
         <img src="images/puerta-alcala.jpg" alt="" />
       </div>
       <div class="hero-inner">
-        <p class="eyebrow-cities">Madrid &#10022; Dublin</p>
-        <p class="eyebrow">We're getting married</p>
+        <p class="eyebrow-cities" data-i18n="hero.citiesEyebrow">Madrid &#10022; Dublin</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">We're getting married</p>
         <h1 class="hero-names">Cristina <span class="amp">&amp;</span> Joe</h1>
         <p class="hero-date" id="weddingDateText">Saturday, August 21, 2027</p>
-        <p class="hero-location"><a href="https://www.clubdetiromadrid.es/bodas" target="_blank" rel="noopener">El Invernadero, Club de Tiro Madrid &middot; El Pardo, Madrid</a></p>
+        <p class="hero-location"><a href="https://www.clubdetiromadrid.es/bodas" target="_blank" rel="noopener" data-i18n="hero.location">El Invernadero, Club de Tiro Madrid &middot; El Pardo, Madrid</a></p>
         <div class="hero-divider" aria-hidden="true"></div>
         <div class="countdown" id="countdown" aria-live="polite">
-          <div class="countdown-item"><span id="cd-days">00</span><label>Days</label></div>
-          <div class="countdown-item"><span id="cd-hours">00</span><label>Hours</label></div>
-          <div class="countdown-item"><span id="cd-mins">00</span><label>Minutes</label></div>
-          <div class="countdown-item"><span id="cd-secs">00</span><label>Seconds</label></div>
+          <div class="countdown-item"><span id="cd-days">00</span><label data-i18n="countdown.days">Days</label></div>
+          <div class="countdown-item"><span id="cd-hours">00</span><label data-i18n="countdown.hours">Hours</label></div>
+          <div class="countdown-item"><span id="cd-mins">00</span><label data-i18n="countdown.minutes">Minutes</label></div>
+          <div class="countdown-item"><span id="cd-secs">00</span><label data-i18n="countdown.seconds">Seconds</label></div>
         </div>
         <div class="hero-actions">
-          <a href="#rsvp" class="btn btn-primary">RSVP</a>
+          <a href="#rsvp" class="btn btn-primary" data-i18n="hero.rsvpButton">RSVP</a>
           <div class="calendar-add">
-            <button type="button" class="btn btn-secondary" id="calendarToggle" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-secondary" id="calendarToggle" aria-haspopup="true" aria-expanded="false" data-i18n="hero.addToCalendar">
               Add to Calendar
             </button>
             <div class="calendar-menu" id="calendarMenu" hidden>
-              <a id="calendarGoogle" href="#" target="_blank" rel="noopener">Google Calendar</a>
-              <a id="calendarOutlook" href="#" target="_blank" rel="noopener">Outlook</a>
-              <a id="calendarIcs" href="#" download="cristina-and-joe-wedding.ics">Apple / Other (.ics)</a>
+              <a id="calendarGoogle" href="#" target="_blank" rel="noopener" data-i18n="hero.calendarGoogle">Google Calendar</a>
+              <a id="calendarOutlook" href="#" target="_blank" rel="noopener" data-i18n="hero.calendarOutlook">Outlook</a>
+              <a id="calendarIcs" href="#" download="cristina-and-joe-wedding.ics" data-i18n="hero.calendarIcs">Apple / Other (.ics)</a>
             </div>
           </div>
         </div>
@@ -70,21 +76,21 @@
 
     <!-- EVENT DETAILS -->
     <section id="details" class="section details">
-      <h2 class="section-title">Wedding Details</h2>
+      <h2 class="section-title" data-i18n="details.sectionTitle">Wedding Details</h2>
       <div class="details-grid">
         <div class="detail-card">
-          <h3>Ceremony</h3>
-          <p class="detail-time">7:00 PM</p>
-          <p>Please arrive from 6:00 PM.<br />El Invernadero, Club de Tiro Madrid<br />Ctra. Madrid-El Pardo M-605, Km 1.2<br />28035 Madrid</p>
+          <h3 data-i18n="details.ceremony.title">Ceremony</h3>
+          <p class="detail-time" id="ceremonyTimeText">7:00 PM</p>
+          <p id="ceremonyArrivalText">Please arrive from 6:00 PM.<br />El Invernadero, Club de Tiro Madrid<br />Ctra. Madrid-El Pardo M-605, Km 1.2<br />28035 Madrid</p>
         </div>
         <div class="detail-card">
-          <h3>Reception</h3>
-          <p class="detail-time">Until 4:00 AM</p>
+          <h3 data-i18n="details.reception.title">Reception</h3>
+          <p class="detail-time" id="receptionTimeText">Until 4:00 AM</p>
           <p>El Invernadero, Club de Tiro Madrid<br />Ctra. Madrid-El Pardo M-605, Km 1.2<br />28035 Madrid</p>
         </div>
         <div class="detail-card">
-          <h3>Dress Code</h3>
-          <p>
+          <h3 data-i18n="details.dressCode.title">Dress Code</h3>
+          <p data-i18n="details.dressCode.body">
             What to wear: Smart but comfortable &mdash; wear whatever you feel
             good in. Fair warning, it'll likely be warm, so lads, linen is a
             good shout if you have it, though no need to go buying one. The
@@ -100,26 +106,26 @@
 
     <!-- GALLERY -->
     <section id="gallery" class="section gallery">
-      <h2 class="section-title">Gallery</h2>
-      <p class="section-subtitle">A few of our favorite moments.</p>
+      <h2 class="section-title" data-i18n="gallery.sectionTitle">Gallery</h2>
+      <p class="section-subtitle" data-i18n="gallery.subtitle">A few of our favorite moments.</p>
       <div class="gallery-grid">
         <div class="gallery-photo">
-          <img src="images/family-beach.jpg" alt="Cristina and Joe on the beach with family" loading="lazy" />
+          <img src="images/family-beach.jpg" alt="Cristina and Joe on the beach with family" loading="lazy" data-i18n-attr="alt:gallery.alt.familyBeach" />
         </div>
         <div class="gallery-photo">
-          <img src="images/plaza-selfie.jpg" alt="Cristina and Joe in a Spanish plaza" loading="lazy" />
+          <img src="images/plaza-selfie.jpg" alt="Cristina and Joe in a Spanish plaza" loading="lazy" data-i18n-attr="alt:gallery.alt.plazaSelfie" />
         </div>
         <div class="gallery-photo">
-          <img src="images/formal-portrait.jpg" alt="Cristina and Joe dressed up for an evening out" loading="lazy" />
+          <img src="images/formal-portrait.jpg" alt="Cristina and Joe dressed up for an evening out" loading="lazy" data-i18n-attr="alt:gallery.alt.formalPortrait" />
         </div>
         <div class="gallery-photo">
-          <img src="images/golf-course.jpg" alt="Cristina and Joe in front of a castle" loading="lazy" />
+          <img src="images/castle.jpg" alt="Cristina and Joe in front of a castle" loading="lazy" data-i18n-attr="alt:gallery.alt.castle" />
         </div>
         <div class="gallery-photo gallery-photo--top">
-          <img src="images/family-parade.jpg" alt="Cristina and Joe with the kids at a St. Patrick's Day parade" loading="lazy" />
+          <img src="images/family-parade.jpg" alt="Cristina and Joe with the kids at a St. Patrick's Day parade" loading="lazy" data-i18n-attr="alt:gallery.alt.familyParade" />
         </div>
         <div class="gallery-photo">
-          <img src="images/family-terrace.jpg" alt="Cristina and Joe with the kids on a terrace" loading="lazy" />
+          <img src="images/family-terrace.jpg" alt="Cristina and Joe with the kids on a terrace" loading="lazy" data-i18n-attr="alt:gallery.alt.familyTerrace" />
         </div>
       </div>
     </section>
@@ -155,47 +161,50 @@
 
     <!-- RSVP -->
     <section id="rsvp" class="section rsvp">
-      <h2 class="section-title">RSVP</h2>
-      <p class="section-subtitle">Kindly respond by June 21, 2027.</p>
+      <h2 class="section-title" data-i18n="rsvp.sectionTitle">RSVP</h2>
+      <p class="section-subtitle" id="rsvpDeadlineText">Kindly respond by June 21, 2027.</p>
+      <p class="section-subtitle rsvp-deadline-note" data-i18n="rsvp.deadlineNote">If you already know you're coming, an early yes helps us with hotel bookings.</p>
 
       <div class="rsvp-reminder">
         <div class="calendar-add">
-          <button type="button" class="btn btn-secondary" id="reminderToggle" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="btn btn-secondary" id="reminderToggle" aria-haspopup="true" aria-expanded="false" data-i18n="rsvp.reminder.button">
             Add a Reminder
           </button>
           <div class="calendar-menu" id="reminderMenu" hidden>
-            <a id="reminderGoogle" href="#" target="_blank" rel="noopener">Google Calendar</a>
-            <a id="reminderOutlook" href="#" target="_blank" rel="noopener">Outlook</a>
-            <a id="reminderIcs" href="#" download="rsvp-reminder.ics">Apple Reminders / Other (.ics)</a>
+            <a id="reminderGoogle" href="#" target="_blank" rel="noopener" data-i18n="rsvp.reminder.google">Google Calendar</a>
+            <a id="reminderOutlook" href="#" target="_blank" rel="noopener" data-i18n="rsvp.reminder.outlook">Outlook</a>
+            <a id="reminderIcs" href="#" download="rsvp-reminder.ics" data-i18n="rsvp.reminder.ics">Apple Reminders / Other (.ics)</a>
           </div>
         </div>
       </div>
 
+      <p class="rsvp-contact-line" data-i18n="rsvp.contactLine">Questions? Email us at cristinaandjoewedding@outlook.com</p>
+
       <form id="rsvpForm" class="rsvp-form" action="https://formspree.io/f/xbgjkplk" method="POST">
         <div class="form-row">
-          <label for="fullName">Full Name</label>
-          <input type="text" id="fullName" name="fullName" required placeholder="Your full name" />
+          <label for="fullName" data-i18n="rsvp.form.fullName.label">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="Your full name" data-i18n-attr="placeholder:rsvp.form.fullName.placeholder" />
         </div>
 
         <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          <label for="email" data-i18n="rsvp.form.email.label">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" data-i18n-attr="placeholder:rsvp.form.email.placeholder" />
         </div>
 
         <fieldset class="form-row">
-          <legend>Will you be attending?</legend>
+          <legend data-i18n="rsvp.form.attending.legend">Will you be attending?</legend>
           <div class="radio-group">
-            <label><input type="radio" name="attending" value="yes" required /> Joyfully accepts</label>
-            <label><input type="radio" name="attending" value="no" required /> Regretfully declines</label>
+            <label><input type="radio" name="attending" value="yes" required /> <span data-i18n="rsvp.form.attending.yes">Joyfully accepts</span></label>
+            <label><input type="radio" name="attending" value="no" required /> <span data-i18n="rsvp.form.attending.no">Regretfully declines</span></label>
           </div>
         </fieldset>
 
         <div class="attending-fields hidden" id="attendingFields">
           <div class="form-row">
-            <label id="guestCountsLabel">Who's Coming?</label>
+            <label id="guestCountsLabel" data-i18n="rsvp.form.guestCounts.label">Who's Coming?</label>
             <div class="guest-counts-grid" role="group" aria-labelledby="guestCountsLabel">
               <div class="guest-count-field">
-                <label for="adults">Adults</label>
+                <label for="adults" data-i18n="rsvp.form.guestCounts.adults">Adults</label>
                 <select id="adults" name="adults">
                   <option value="0">0</option>
                   <option value="1" selected>1</option>
@@ -207,7 +216,7 @@
                 </select>
               </div>
               <div class="guest-count-field">
-                <label for="children">Children</label>
+                <label for="children" data-i18n="rsvp.form.guestCounts.children">Children</label>
                 <select id="children" name="children">
                   <option value="0" selected>0</option>
                   <option value="1">1</option>
@@ -221,34 +230,32 @@
             </div>
           </div>
 
-          <div class="form-row">
-            <label for="dietary">Dietary Restrictions / Allergies</label>
-            <textarea id="dietary" name="dietary" rows="3" placeholder="Let us know of any allergies or dietary needs"></textarea>
-          </div>
+          <div class="form-row guest-list" id="guestFields"></div>
         </div>
 
         <div class="form-row">
-          <label for="message">Message for the Couple (optional)</label>
-          <textarea id="message" name="message" rows="3" placeholder="Please also let us know the names of who will be joining us!"></textarea>
+          <label for="message" data-i18n="rsvp.form.message.label">Message for the Couple (optional)</label>
+          <textarea id="message" name="message" rows="3" placeholder="Anything else you'd like to share?" data-i18n-attr="placeholder:rsvp.form.message.placeholder"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Send RSVP</button>
+        <button type="submit" class="btn btn-primary" data-i18n="rsvp.form.submit">Send RSVP</button>
 
         <p class="form-note" id="formNote"></p>
       </form>
 
       <div id="rsvpSuccess" class="rsvp-success hidden" role="status">
-        <h3>Thank you!</h3>
-        <p>Your RSVP has been sent. We can't wait to celebrate with you.</p>
+        <h3 data-i18n="rsvp.success.title">Thank you!</h3>
+        <p data-i18n="rsvp.success.body">Your RSVP has been sent. We can't wait to celebrate with you.</p>
       </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
-    <p>Cristina &amp; Joe &middot; August 21, 2027</p>
+    <p>Cristina &amp; Joe &middot; <span id="footerDateText">August 21, 2027</span></p>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

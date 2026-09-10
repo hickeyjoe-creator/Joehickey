@@ -104,6 +104,37 @@ img { max-width: 100%; display: block; }
   background: var(--color-text);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.lang-toggle {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  border: none;
+  background: none;
+  padding: 0.3rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+.lang-btn[aria-pressed="true"] {
+  background: var(--color-accent);
+  color: #fff;
+}
+
 /* Hero */
 .hero {
   position: relative;
@@ -353,9 +384,22 @@ img { max-width: 100%; display: block; }
   margin-bottom: 1.25rem;
 }
 
+.rsvp-deadline-note {
+  font-size: 0.9rem;
+  margin-top: -1rem;
+}
+
 .rsvp-reminder {
   text-align: center;
   margin: 0 0 2.5rem;
+}
+
+.rsvp-contact-line {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  max-width: 560px;
+  margin: 0 auto 1.5rem;
 }
 
 .gallery-photo {
@@ -521,6 +565,23 @@ input:focus, select:focus, textarea:focus {
   margin-bottom: 0.35rem;
 }
 
+.guest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.guest-fields-heading {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.guest-list .guest-fields-heading:first-child {
+  margin-top: 0;
+}
+
 .form-note {
   font-size: 0.8rem;
   color: var(--color-muted);
@@ -588,6 +649,8 @@ input:focus, select:focus, textarea:focus {
   .nav-menu.open { display: flex; }
 
   .nav-toggle { display: flex; }
+
+  .nav-right { gap: 0.75rem; }
 
   .countdown { gap: 0.75rem; }
   .countdown-item { min-width: 50px; }
