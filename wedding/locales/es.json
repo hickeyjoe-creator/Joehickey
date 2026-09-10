@@ -1,25 +1,25 @@
 {
   "meta": {
-    "title": "[ES TODO] Cristina & Joe | Our Wedding",
-    "description": "[ES TODO] Join us as we celebrate the wedding of Cristina and Joe."
+    "title": "Cristina & Joe · Nuestra boda",
+    "description": "Acompáñanos a celebrar la boda de Cristina y Joe."
   },
   "nav": {
-    "details": "[ES TODO] Details",
-    "gallery": "[ES TODO] Gallery",
-    "travel": "[ES TODO] Travel",
+    "details": "Detalles",
+    "gallery": "Fotos",
+    "travel": "Viaje",
     "rsvp": "RSVP",
-    "menuToggle": "[ES TODO] Menu",
-    "langToggleLabel": "[ES TODO] Language"
+    "menuToggle": "Menú",
+    "langToggleLabel": "Idioma"
   },
   "hero": {
     "citiesEyebrow": "Madrid ✦ Dublin",
-    "eyebrow": "[ES TODO] We're getting married",
+    "eyebrow": "¡Nos casamos!",
     "location": "El Invernadero, Club de Tiro Madrid · El Pardo, Madrid",
     "rsvpButton": "RSVP",
-    "addToCalendar": "[ES TODO] Add to Calendar",
+    "addToCalendar": "Añadir al calendario",
     "calendarGoogle": "Google Calendar",
     "calendarOutlook": "Outlook",
-    "calendarIcs": "[ES TODO] Apple / Other (.ics)"
+    "calendarIcs": "Apple / Otros (.ics)"
   },
   "countdown": {
     "days": "Días",
@@ -28,63 +28,63 @@
     "seconds": "Segundos"
   },
   "details": {
-    "sectionTitle": "[ES TODO] Wedding Details",
+    "sectionTitle": "Detalles de la boda",
     "ceremony": {
-      "title": "[ES TODO] Ceremony",
+      "title": "Ceremonia",
       "time": "{time}",
-      "arrival": "[ES TODO] Please arrive from {time}.",
+      "arrival": "Os esperamos a partir de las {time}.",
       "address": "El Invernadero, Club de Tiro Madrid\nCtra. Madrid-El Pardo M-605, Km 1.2\n28035 Madrid"
     },
     "reception": {
-      "title": "[ES TODO] Reception",
-      "time": "[ES TODO] Until {time}",
+      "title": "Celebración",
+      "time": "Hasta las {time}",
       "address": "El Invernadero, Club de Tiro Madrid\nCtra. Madrid-El Pardo M-605, Km 1.2\n28035 Madrid"
     },
     "dressCode": {
-      "title": "[ES TODO] Dress Code",
-      "body": "[ES TODO] What to wear: Smart but comfortable — wear whatever you feel good in. Fair warning, it'll likely be warm, so lads, linen is a good shout if you have it, though no need to go buying one. The ceremony is outside on the grass and dinner is indoors with the air-con on, so bring a light jacket or wrap in case you get chilly later. The venue will have sun umbrellas out for the ceremony, and heels are no bother — there'll be heel protectors on hand for the lawn."
+      "title": "Qué ponerse",
+      "body": "La idea es ir elegantes, pero cómodos: poneos algo con lo que os sintáis a gusto. Eso sí, seguramente hará calor, así que, chicos, si tenéis algo de lino, es una buena opción, pero no hace falta comprar nada. La ceremonia será al aire libre, sobre el césped, y la cena será en un espacio interior con aire acondicionado. Os recomendamos llevar una chaqueta ligera o un chal por si luego tenéis frío. Habrá sombrillas durante la ceremonia y, si queréis llevar tacones, no os preocupéis: tendremos protectores para que no se hundan en el césped."
     }
   },
   "gallery": {
-    "sectionTitle": "[ES TODO] Gallery",
-    "subtitle": "[ES TODO] A few of our favorite moments.",
+    "sectionTitle": "Fotos",
+    "subtitle": "Algunos de nuestros momentos favoritos.",
     "alt": {
-      "familyBeach": "[ES TODO] Cristina and Joe on the beach with family",
-      "plazaSelfie": "[ES TODO] Cristina and Joe in a Spanish plaza",
-      "formalPortrait": "[ES TODO] Cristina and Joe dressed up for an evening out",
-      "castle": "[ES TODO] Cristina and Joe in front of a castle",
-      "familyParade": "[ES TODO] Cristina and Joe with the kids at a St. Patrick's Day parade",
-      "familyTerrace": "[ES TODO] Cristina and Joe with the kids on a terrace",
+      "familyBeach": "Cristina y Joe en la playa con la familia",
+      "plazaSelfie": "Cristina y Joe en una plaza española",
+      "formalPortrait": "Cristina y Joe arreglados para salir por la noche",
+      "castle": "Cristina y Joe delante de un castillo",
+      "familyParade": "Cristina y Joe con los niños en un desfile del Día de San Patricio",
+      "familyTerrace": "Cristina y Joe con los niños en una terraza",
       "heroPhoto": ""
     }
   },
   "rsvp": {
     "sectionTitle": "RSVP",
-    "deadline": "[ES TODO] Kindly respond by {date}.",
-    "deadlineNote": "[ES TODO] If you already know you're coming, an early yes helps us with hotel bookings.",
-    "contactLine": "[ES TODO] Questions? Email us at cristinaandjoewedding@outlook.ie",
+    "deadline": "Por favor, confirma tu asistencia antes del {date}.",
+    "deadlineNote": "Si ya sabes que vas a venir, confirmarlo cuanto antes nos ayuda a organizar las reservas de hotel.",
+    "contactLine": "Si tienes alguna duda, escríbenos a cristinaandjoewedding@outlook.ie",
     "reminder": {
-      "button": "[ES TODO] Add a Reminder",
+      "button": "Añadir un recordatorio",
       "google": "Google Calendar",
       "outlook": "Outlook",
-      "ics": "[ES TODO] Apple Reminders / Other (.ics)"
+      "ics": "Recordatorios de Apple / Otros (.ics)"
     },
     "form": {
       "fullName": {
         "label": "Nombre completo",
-        "placeholder": "[ES TODO] Your full name"
+        "placeholder": "Tu nombre completo"
       },
       "email": {
         "label": "Correo electrónico",
         "placeholder": "you@example.com"
       },
       "attending": {
-        "legend": "[ES TODO] Will you be attending?",
-        "yes": "[ES TODO] Joyfully accepts",
-        "no": "[ES TODO] Regretfully declines"
+        "legend": "¿Vendrás a la boda?",
+        "yes": "¡Sí, allí estaré!",
+        "no": "Lamentablemente, no podré ir"
       },
       "guestCounts": {
-        "label": "[ES TODO] Who's Coming?",
+        "label": "¿Quiénes vienen?",
         "adults": "Adultos",
         "children": "Niños"
       },
@@ -92,28 +92,28 @@
         "adultLabel": "Adulto {n}",
         "childLabel": "Niño {n}",
         "namePlaceholder": "Nombre completo",
-        "dietaryPlaceholder": "[ES TODO] Dietary restrictions / allergies (optional)"
+        "dietaryPlaceholder": "Restricciones alimentarias o alergias (opcional)"
       },
       "message": {
-        "label": "[ES TODO] Message for the Couple (optional)",
-        "placeholder": "[ES TODO] Anything else you'd like to share?"
+        "label": "Mensaje para los novios (opcional)",
+        "placeholder": "¿Hay algo más que quieras contarnos?"
       },
-      "submit": "[ES TODO] Send RSVP",
-      "errorGeneric": "[ES TODO] Something went wrong sending your RSVP. Please try again in a moment."
+      "submit": "Enviar respuesta",
+      "errorGeneric": "Ha habido un problema al enviar tu respuesta. Por favor, vuelve a intentarlo dentro de un momento."
     },
     "success": {
-      "title": "[ES TODO] Thank you!",
-      "body": "[ES TODO] Your RSVP has been sent. We can't wait to celebrate with you."
+      "title": "¡Gracias!",
+      "body": "Tu respuesta se ha enviado correctamente. ¡Muchas gracias por hacérnoslo saber!"
     }
   },
   "calendar": {
     "wedding": {
-      "title": "[ES TODO] Cristina & Joe's Wedding",
-      "description": "[ES TODO] Join us as we celebrate the wedding of Cristina and Joe! Arrival from 6:00 PM, ceremony at 7:00 PM. More info: https://cristinaandjoewedding.com"
+      "title": "Boda de Cristina y Joe",
+      "description": "¡Acompáñanos a celebrar la boda de Cristina y Joe! Llegada a partir de las 18:00 y ceremonia a las 19:00. Más información: https://cristinaandjoewedding.com"
     },
     "reminder": {
-      "title": "[ES TODO] Reminder: RSVP for Cristina & Joe's Wedding",
-      "description": "[ES TODO] Don't forget to RSVP for Cristina and Joe's wedding! https://cristinaandjoewedding.com/#rsvp"
+      "title": "Recordatorio: confirmar asistencia a la boda de Cristina y Joe",
+      "description": "¡No olvides confirmar si vendrás a la boda de Cristina y Joe! https://cristinaandjoewedding.com/#rsvp"
     }
   },
   "footer": {
