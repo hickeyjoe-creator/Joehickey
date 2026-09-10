@@ -4,28 +4,40 @@
     "published": false,
     "name": "Hotel Villa Madrid",
     "badge": null,
-    "tagline": { "en": "", "es": "" },
+    "tagline": {
+      "en": "",
+      "es": ""
+    },
     "address": "",
-    "distanceToVenue": { "en": "", "es": "" },
-    "distanceToCentre": { "en": "", "es": "" },
+    "distanceToVenue": {
+      "en": "",
+      "es": ""
+    },
+    "distanceToCentre": {
+      "en": "",
+      "es": ""
+    },
     "priceFrom": "€338 / night",
     "priceNote": {
       "en": "We recommend choosing the flexible rate. Breakfast is not included by default.",
-      "es": "[ES TODO] We recommend choosing the flexible rate. Breakfast is not included by default."
+      "es": "Os recomendamos elegir la tarifa flexible. El desayuno no está incluido por defecto."
     },
     "bookingMethod": "code",
     "promoCode": "CLUBDETIRO",
     "bookingInstructions": {
       "en": "Enter code CLUBDETIRO in the \"Promoción\" field when booking on hotelvillamadrid.com.",
-      "es": "[ES TODO] Enter code CLUBDETIRO in the \"Promoción\" field when booking on hotelvillamadrid.com."
+      "es": "Introducid el código CLUBDETIRO en el campo «Promoción» al reservar en hotelvillamadrid.com."
     },
     "bookingUrl": "https://www.hotelvillamadrid.com",
     "cancellation": {
       "en": "Flexible rate: free cancellation until 20 August 2027.",
-      "es": "[ES TODO] Flexible rate: free cancellation until 20 August 2027."
+      "es": "Tarifa flexible: cancelación gratuita hasta el 20 de agosto de 2027."
     },
     "shuttle": "tbc",
-    "shuttleNote": { "en": "", "es": "" },
+    "shuttleNote": {
+      "en": "",
+      "es": ""
+    },
     "lat": null,
     "lng": null
   },
@@ -34,22 +46,40 @@
     "published": false,
     "name": "Hotel Aravaca Village",
     "badge": null,
-    "tagline": { "en": "", "es": "" },
+    "tagline": {
+      "en": "",
+      "es": ""
+    },
     "address": "C/ Camino de la Zarzuela 23, 28023 Madrid",
-    "distanceToVenue": { "en": "", "es": "" },
-    "distanceToCentre": { "en": "", "es": "" },
+    "distanceToVenue": {
+      "en": "",
+      "es": ""
+    },
+    "distanceToCentre": {
+      "en": "",
+      "es": ""
+    },
     "priceFrom": "",
-    "priceNote": { "en": "", "es": "" },
+    "priceNote": {
+      "en": "",
+      "es": ""
+    },
     "bookingMethod": "mention",
     "promoCode": "",
     "bookingInstructions": {
       "en": "Book directly with the hotel and mention Cristina & Joe's wedding for 10% off.",
-      "es": "[ES TODO] Book directly with the hotel and mention Cristina & Joe's wedding for 10% off."
+      "es": "Reservad directamente con el hotel y mencionad la boda de Cristina y Joe para obtener un 10 % de descuento."
     },
     "bookingUrl": "https://www.hotelaravacavillage.com",
-    "cancellation": { "en": "", "es": "" },
+    "cancellation": {
+      "en": "",
+      "es": ""
+    },
     "shuttle": "no",
-    "shuttleNote": { "en": "", "es": "" },
+    "shuttleNote": {
+      "en": "",
+      "es": ""
+    },
     "lat": null,
     "lng": null
   },
@@ -58,22 +88,40 @@
     "published": false,
     "name": "Zarzuela Park",
     "badge": null,
-    "tagline": { "en": "", "es": "" },
+    "tagline": {
+      "en": "",
+      "es": ""
+    },
     "address": "",
-    "distanceToVenue": { "en": "", "es": "" },
-    "distanceToCentre": { "en": "", "es": "" },
+    "distanceToVenue": {
+      "en": "",
+      "es": ""
+    },
+    "distanceToCentre": {
+      "en": "",
+      "es": ""
+    },
     "priceFrom": "",
-    "priceNote": { "en": "", "es": "" },
+    "priceNote": {
+      "en": "",
+      "es": ""
+    },
     "bookingMethod": "code",
     "promoCode": "",
     "bookingInstructions": {
       "en": "15% off the web rate with our code.",
-      "es": "[ES TODO] 15% off the web rate with our code."
+      "es": "15 % de descuento sobre la tarifa web con nuestro código."
     },
     "bookingUrl": "",
-    "cancellation": { "en": "", "es": "" },
+    "cancellation": {
+      "en": "",
+      "es": ""
+    },
     "shuttle": "tbc",
-    "shuttleNote": { "en": "", "es": "" },
+    "shuttleNote": {
+      "en": "",
+      "es": ""
+    },
     "lat": null,
     "lng": null
   },
@@ -82,25 +130,40 @@
     "published": false,
     "name": "Eurostars Monte Real",
     "badge": null,
-    "tagline": { "en": "", "es": "" },
+    "tagline": {
+      "en": "",
+      "es": ""
+    },
     "address": "Calle Arroyofresno 17, 28035 Madrid",
-    "distanceToVenue": { "en": "", "es": "" },
-    "distanceToCentre": { "en": "", "es": "" },
+    "distanceToVenue": {
+      "en": "",
+      "es": ""
+    },
+    "distanceToCentre": {
+      "en": "",
+      "es": ""
+    },
     "priceFrom": "",
-    "priceNote": { "en": "", "es": "" },
+    "priceNote": {
+      "en": "",
+      "es": ""
+    },
     "bookingMethod": "code",
     "promoCode": "",
     "bookingInstructions": {
       "en": "15% off the web rate, valid until one week before the wedding.",
-      "es": "[ES TODO] 15% off the web rate, valid until one week before the wedding."
+      "es": "15 % de descuento sobre la tarifa web, válido hasta una semana antes de la boda."
     },
     "bookingUrl": "https://www.eurostarshotels.com",
     "cancellation": {
       "en": "Free cancellation up to 14 days before arrival; full charge inside 14 days.",
-      "es": "[ES TODO] Free cancellation up to 14 days before arrival; full charge inside 14 days."
+      "es": "Cancelación gratuita hasta 14 días antes de la llegada. Si canceláis con menos de 14 días de antelación, se cobrará el importe completo."
     },
     "shuttle": "no",
-    "shuttleNote": { "en": "", "es": "" },
+    "shuttleNote": {
+      "en": "",
+      "es": ""
+    },
     "lat": null,
     "lng": null
   }

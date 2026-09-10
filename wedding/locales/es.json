@@ -87,7 +87,7 @@
         "label": "¿Quiénes vienen?",
         "adults": "Adultos",
         "children": "Niños (12 años o menos)",
-        "ageHelper": "[ES TODO] Anyone aged 13 or over counts as an adult."
+        "ageHelper": "Las personas de 13 años o más cuentan como adultos."
       },
       "guestList": {
         "adultLabel": "Adulto {n}",
@@ -96,9 +96,9 @@
         "dietaryPlaceholder": "Restricciones alimentarias o alergias (opcional)"
       },
       "songRequest": {
-        "label": "[ES TODO] A song that'll get you on the dance floor",
-        "helper": "[ES TODO] We'll pass it on to the DJ — no promises!",
-        "placeholder": "[ES TODO] e.g. Move On Up – Curtis Mayfield"
+        "label": "Una canción que te saque a la pista de baile",
+        "helper": "Se la pasaremos al DJ, ¡pero no prometemos nada!",
+        "placeholder": "P. ej., Move On Up – Curtis Mayfield"
       },
       "message": {
         "label": "Mensaje para los novios (opcional)",
@@ -126,54 +126,54 @@
     "line": "Cristina & Joe · {date}"
   },
   "travel": {
-    "sectionTitle": "[ES TODO] Travel & Stay",
-    "comingSoon": "[ES TODO] Details coming soon",
-    "tabsAriaLabel": "[ES TODO] Travel sections",
+    "sectionTitle": "Desplazamiento y alojamiento",
+    "comingSoon": "Próximamente, más información",
+    "tabsAriaLabel": "Secciones de desplazamiento y alojamiento",
     "tabs": {
-      "madrid": "[ES TODO] Getting to Madrid",
-      "stay": "[ES TODO] Where to Stay",
-      "day": "[ES TODO] On the Day",
-      "home": "[ES TODO] Getting Home"
+      "madrid": "Cómo llegar a Madrid",
+      "stay": "Dónde alojarse",
+      "day": "El día de la boda",
+      "home": "La vuelta"
     },
     "madrid": {
-      "airport": "[ES TODO] Nearest airport: Adolfo Suárez Madrid–Barajas (MAD), about 25 minutes by car from the venue.",
-      "taxiLabel": "[ES TODO] Taxi",
-      "taxi": "[ES TODO] There's a fixed fare from the airport to central Madrid.",
-      "taxiFareLabel": "[ES TODO] Fixed fare",
-      "metroLabel": "[ES TODO] Metro / Train",
-      "metro": "[ES TODO] Metro Line 8 and Cercanías trains connect the airport to central Madrid."
+      "airport": "Aeropuerto más cercano: Adolfo Suárez Madrid–Barajas (MAD), a unos 25 minutos en coche del lugar de la boda.",
+      "taxiLabel": "Taxi",
+      "taxi": "Hay una tarifa fija para los trayectos en taxi desde el aeropuerto al centro de Madrid.",
+      "taxiFareLabel": "Tarifa fija",
+      "metroLabel": "Metro / Tren",
+      "metro": "La línea 8 de Metro y los trenes de Cercanías conectan el aeropuerto con el centro de Madrid."
     },
     "stay": {
-      "emptyMessage": "[ES TODO] Hotel recommendations are coming soon — we'll update this page as soon as we have them.",
-      "priceFromLabel": "[ES TODO] From",
-      "promoCodeLabel": "[ES TODO] Promo code",
-      "copyButton": "[ES TODO] Copy",
-      "copiedConfirmation": "[ES TODO] Copied!",
-      "bookingLabel": "[ES TODO] How to book",
-      "bookButton": "[ES TODO] Book",
-      "cancellationLabel": "[ES TODO] Cancellation",
-      "shuttleLabel": "[ES TODO] Shuttle",
-      "shuttleYes": "[ES TODO] Shuttle provided",
-      "shuttleNo": "[ES TODO] No shuttle",
-      "shuttleTbc": "[ES TODO] Shuttle: details coming soon",
-      "badgeFamily": "[ES TODO] Our pick for family",
-      "badgeGroups": "[ES TODO] Best for groups",
-      "mapAriaLabel": "[ES TODO] Map",
-      "mapVenue": "[ES TODO] Venue: Club de Tiro Madrid",
-      "mapAirport": "[ES TODO] Adolfo Suárez Madrid–Barajas Airport",
-      "mapCentre": "[ES TODO] City centre (Puerta del Sol)"
+      "emptyMessage": "Pronto os recomendaremos algunos hoteles. Actualizaremos esta página en cuanto tengamos la información.",
+      "priceFromLabel": "Desde",
+      "promoCodeLabel": "Código promocional",
+      "copyButton": "Copiar",
+      "copiedConfirmation": "¡Copiado!",
+      "bookingLabel": "Cómo reservar",
+      "bookButton": "Reservar",
+      "cancellationLabel": "Cancelación",
+      "shuttleLabel": "Servicio de traslado",
+      "shuttleYes": "Servicio de traslado disponible",
+      "shuttleNo": "Sin servicio de traslado",
+      "shuttleTbc": "Servicio de traslado: próximamente, más información",
+      "badgeFamily": "Nuestra recomendación para la familia",
+      "badgeGroups": "Ideal para grupos",
+      "mapAriaLabel": "Mapa",
+      "mapVenue": "Lugar de la boda: Club de Tiro Madrid",
+      "mapAirport": "Aeropuerto Adolfo Suárez Madrid–Barajas",
+      "mapCentre": "Centro de la ciudad (Puerta del Sol)"
     },
     "day": {
-      "times": "[ES TODO] Guests are welcome from 18:00. The ceremony starts at 19:00.",
-      "shuttleHeading": "[ES TODO] Shuttle",
-      "taxiHeading": "[ES TODO] Not on the shuttle?",
-      "addressHeading": "[ES TODO] Venue address",
-      "mapsLink": "[ES TODO] View on Google Maps",
-      "parkingNote": "[ES TODO] On-site parking is available."
+      "times": "Os esperamos a partir de las 18:00. La ceremonia empieza a las 19:00.",
+      "shuttleHeading": "Servicio de traslado",
+      "taxiHeading": "¿No vais a usar el servicio de traslado?",
+      "addressHeading": "Dirección del lugar de la boda",
+      "mapsLink": "Ver en Google Maps",
+      "parkingNote": "Hay aparcamiento en el recinto."
     },
     "home": {
-      "coachHeading": "[ES TODO] Coach",
-      "taxiNote": "[ES TODO] The venue is outside the city — taxis cannot be hailed on the street. Please pre-book a taxi or use the coach."
+      "coachHeading": "Autocar",
+      "taxiNote": "El lugar de la boda está fuera de la ciudad, por lo que no se pueden parar taxis por la calle. Por favor, reservad un taxi con antelación o utilizad el autocar."
     }
   }
 }
